@@ -1,6 +1,5 @@
 import 'package:banking_app_firebase/components/elevated_button.dart';
 import 'package:banking_app_firebase/screens/login_screen.dart';
-import 'package:banking_app_firebase/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -79,13 +78,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               color: Colors.white,
               onPressed: () {
                 Navigator.pushNamed(context, LoginScreen.id);
-              },
-            ),
-            ReusableButton(
-              title: "Register",
-              color: Colors.white,
-              onPressed: () {
-                Navigator.pushNamed(context, RegisterScreen.id);
               },
             ),
           ],
