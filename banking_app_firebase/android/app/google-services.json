@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1090026262138",
+    "project_id": "bankingapp-ab3ee",
+    "storage_bucket": "bankingapp-ab3ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090026262138:android:5422cf58e9440cdaa2b5c3",
+        "android_client_info": {
+          "package_name": "com.mmfa.banking_app_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1090026262138-slpqqk9aeep9n7epqib0s8uguiq31p3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6KteEuFShKFLu3zlRPkOIPLd7acCBdQs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1090026262138-slpqqk9aeep9n7epqib0s8uguiq31p3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
