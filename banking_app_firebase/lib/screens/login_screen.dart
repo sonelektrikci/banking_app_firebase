@@ -1,3 +1,4 @@
+import 'package:banking_app_firebase/networking.dart';
 import 'package:banking_app_firebase/screens/customers_info.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -17,24 +18,11 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _auth = FirebaseAuth.instance;
-  CollectionReference customers =
-      FirebaseFirestore.instance.collection('customers');
+
   bool showSpinner = false;
+
   String? email;
   String? password;
-  String? name;
-  String? surname;
-  int? balance;
-
-  Future getCustomerData() async {
-    await customers.where('email', isEqualTo: email).get().then((value) {
-      value.docs.forEach((result) {
-        name = result['name'];
-        surname = result['surname'];
-        balance = result['balance'];
-      });
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -92,19 +80,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.circular(30),
                   child: MaterialButton(
                     onPressed: () async {
-                      setState(() {
-                        showSpinner = true;
-                      });
                       try {
                         final user = await _auth.signInWithEmailAndPassword(
                             email: email!, password: password!);
                         if (user != null) {
-                          await getCustomerData();
-                          Navigator.pushNamed(context, CustomerScreen.id);
+                          var customerInfo = CustomerInfo(email: email);
+                          await customerInfo.getCustomerData();
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => CustomerScreen(
+                                      customerInfo: customerInfo)));
                         }
-                        setState(() {
-                          showSpinner = true;
-                        });
                       } catch (e) {
                         print(e);
                       }

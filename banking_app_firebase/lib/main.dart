@@ -12,7 +12,6 @@ void main() async {
     routes: {
       WelcomeScreen.id: (context) => WelcomeScreen(),
       LoginScreen.id: (context) => LoginScreen(),
-      CustomerScreen.id: (context) => CustomerScreen(),
     },
   ));
 }
