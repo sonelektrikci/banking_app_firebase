@@ -9,6 +9,7 @@ void main() async {
   await Firebase.initializeApp();
   runApp(MaterialApp(
     initialRoute: WelcomeScreen.id,
+    debugShowCheckedModeBanner: false,
     routes: {
       WelcomeScreen.id: (context) => WelcomeScreen(),
       LoginScreen.id: (context) => LoginScreen(),
