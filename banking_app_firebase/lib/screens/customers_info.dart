@@ -118,22 +118,41 @@ class _CustomerScreenState extends State<CustomerScreen> {
                   borderRadius: BorderRadius.circular(28),
                   color: Colors.grey[200],
                 ),
-                child: Stack(
-                  children: [
-                    isMasterCard()
-                        ? Image(
-                            image: NetworkImage(
-                                "https://brand.mastercard.com/content/dam/mccom/brandcenter/thumbnails/mastercard_circles_92px_2x.png"),
-                            height: 50,
-                            width: 50,
-                          )
-                        : Image(
-                            image: NetworkImage(
-                                "https://cdn.freebiesupply.com/logos/large/2x/visa-logo-png-transparent.png"),
-                            height: 50,
-                            width: 50,
-                          )
-                  ],
+                child: Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Row(
+                    children: [
+                      Container(
+                        child: isMasterCard()
+                            ? Image(
+                                image: NetworkImage(
+                                    "https://brand.mastercard.com/content/dam/mccom/brandcenter/thumbnails/mastercard_circles_92px_2x.png"),
+                                height: 50,
+                                width: 50,
+                              )
+                            : Image(
+                                image: NetworkImage(
+                                    "https://cdn.freebiesupply.com/logos/large/2x/visa-logo-png-transparent.png"),
+                                height: 50,
+                                width: 50,
+                              ),
+                      ),
+                      Column(
+                        children: [
+                          Text(
+                            "Card Number",
+                            style: kInfoTextDecoration.copyWith(
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                          Text(
+                            cardNumber!,
+                            style: kInfoTextDecoration,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

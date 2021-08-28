@@ -19,7 +19,7 @@ class CustomerInfo {
       surname = data.docs[0]['surname'];
       balance = data.docs[0]['balance'];
       avatarLink = data.docs[0]['photo'];
-      cardNumber = data.docs[0]['credit_card'];
+      cardNumber = data.docs[0]['cardNumber'];
       cardProvider = data.docs[0]['cardProvider'];
     });
   }

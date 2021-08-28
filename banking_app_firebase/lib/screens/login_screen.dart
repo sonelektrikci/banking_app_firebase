@@ -92,9 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   builder: (context) => CustomerScreen(
                                       customerInfo: customerInfo)));
                         }
-                      } catch (e) {
-                        print(e);
-                      }
+                      } catch (e) {}
                     },
                     height: 42,
                     child: Text(
